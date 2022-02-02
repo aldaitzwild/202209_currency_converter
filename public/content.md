@@ -8,7 +8,8 @@ Vous êtes en charge du développement d'un site de e-commerce qui doit présent
 
 Le prix des produits sera saisie en base de données en euros, et c'est à l'affichage que l'on affichera les autres devises avec une conversion en temps réél.
 
-Pour celà, vous utiliserez l'API suivante : [Exchange Rate API](https://www.exchangerate-api.com/)
+#### Contraintes
+Pour réaliser votre conversion, vous utiliserez l'API suivante : [Exchange Rate API](https://www.exchangerate-api.com/)
 
 *Vous devrez vous enregistrer sur le site pour obtenir une clé d'API*
 
