@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Wild Figurines - {{ product.name }}{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1 class="text-center p-3">{{ product.name }}</h1>
+
+        <div class="row">
+            <div class="col-6">
+                <img src="{{ product.imageUrl }}" class="img-fluid">
+            </div>
+
+            <div class="col-6">
+                <ul>
+                    <li><label>Description : </label>{{product.description}}</li>
+                    <li><label>Marque : </label>{{product.brand}}</li>
+                    <li><label>Prix TTC : </label>{{product.price}}€</li>
+                    <li><label>Prix en dollars : </label>{{dollar_price}}$</li>
+                    <li><label>Prix en yen : </label>{{yen_price}}¥</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+main {
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
