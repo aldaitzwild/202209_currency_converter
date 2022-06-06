@@ -1,40 +1,40 @@
-# Workshop template
+# Les Services 
 
-A React-based workshop template. It basically reads a markdown file, splits it into steps, and formats it nicely.
+## Les bons comptes font les bons services
 
-An example of what you get: <https://wildcodeschool.github.io/initiation-javascript/>
+#### Introduction
 
-For the non-JS out there, you need Node.js, which you *should* install with [NVM](https://github.com/nvm-sh/nvm) (Linux/MacOS) or [NVM-Windows](https://github.com/coreybutler/nvm-windows).
+Vous êtes en charge du développement d'un site de e-commerce qui doit présenter ses prix en euros (€), en dollars ($) et en yen (¥).
 
-## 1. Create the new workshop repository
+Le prix des produits sera saisie en base de données en euros, et c'est à l'affichage que l'on affichera les autres devises avec une conversion en temps réél.
 
-**Don't fork this repository**.
+#### Contraintes
+Pour réaliser votre conversion, vous utiliserez l'API suivante : [Exchange Rate API](https://www.exchangerate-api.com/)
 
-Use the `use this template` git button!
+*Vous devrez vous enregistrer sur le site pour obtenir une clé d'API*
 
-## 2. Change its parameters
+#### Créer votre catalogue
 
-Clone the repository locally. Then, in `package.json`, replace `workshop-template` with your own workshop URL (e.g. `farting-unicorns`) in the `homepage` value (and also in `name` but that doesn't matter).
+A partir d'une installation de symfony toute neuve, créer une nouvelle entité `Product` avec les champs suivants :
+ - name (string)
+ - description (text)
+ - price (float)
+ - pictureUrl (string)
 
-## 3. Edit it!
+Réaliser un fichier de migration et le passer en base.
 
-The content is located in `public/content.md`.
+Créer ensuite une fixture qui génèrera une dizaine de produit.
 
-You just have to follow its conventions:
+#### Convertir les différentes devises dans la vue de détail d'un produit
 
-* `#` for title, `##` for subtitle
-* The first `####` and content below will be displayed as an introduction.
-* **All the following** `####` and content **will be displayed as a card**, and their titles automagically added to the left nav menu.
+Créer un Service, qui contiendra une fonction `convertEurToDollar(float euroPrice): float`. 
+Cette fonction prendra en paramètre un prix en `euros` et renverra un prix en `dollar`, en utilisant l'API de conversion ([documentation](https://www.exchangerate-api.com/docs/pair-conversion-requests))
 
-## 4. Preview it locally
+>Rappel : afin de faire appel à cette API vous disposez de l'outil [HttpClient](https://symfony.com/doc/current/http_client.html). 
+La bonne nouvelle est que HttpClient est un service déjà présent dans le service container de Symfony, tu peux le réclamer par injection en utilisant la technique présente dans ton cours ;-).
 
-* `npm install` or `yarn` to install dependencies
-* `npm start` or `yarn start` to launch
+Faire ensuite une fonction similaire pour convertir en yen.
 
-## 5. Push and deploy it!
+#### Afficher les informations
 
-- Once pushed, you should just have to run `npm run deploy` or `yarn deploy`.
-- It will automatically create a `gh-branch` on Github repository. 
-- Use Github Page (in Github Settings) and select `gh-branch`. Wait few minutes, then the workshop will be available, congrats! 
-
-![Thanos - That's all folks](https://cdn.shopify.com/s/files/1/0073/2452/products/thatsall_1024x1024.jpg?v=1563557232)
+Une fois le service prêt, utiliser reclamer le dans l'action de votre Controller qui gère l'affichage de la vue de détail d'un produit et utilisez vos nouvelles fonctions pour convertir le prix de votre produit. Il suffit ensuite de transmettre vos prix en dollar et en yen à Twig pour que vous puissez les afficher dans votre template.
