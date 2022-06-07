@@ -19,7 +19,7 @@ Des fixtures pour préparer votre catalogue sont déjà en place, pensez donc bi
 
 #### Convertir les différentes devises dans la vue de détail d'un produit
 
-Créer un Service, qui contiendra une fonction `convertEurToDollar(float euroPrice): float`. 
+Créer un Service, qui contiendra une fonction `convertEurToDollar(float $euroPrice): float`. 
 Cette fonction prendra en paramètre un prix en `euros` et renverra un prix en `dollar`, en utilisant l'API de conversion ([documentation](https://www.exchangerate-api.com/docs/pair-conversion-requests))
 
 >Rappel : afin de faire appel à cette API vous disposez de l'outil [HttpClient](https://symfony.com/doc/current/http_client.html). 
