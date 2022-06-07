@@ -6,7 +6,7 @@
 
 Vous êtes en charge du développement d'un site de e-commerce qui vend des figurines de collection. Toutes les transactions du site se font en euros (€). Mais comme les collectionneurs sont plus habitués au prix en dollars ($) ou en yens (¥), le site doit présenter ses prix dans ces deux devises en prenant en compte leur cours le plus actuel.
 
-Seul le prix des produits en euros est saisie en base de données il faudra donc le convertir au moment d'afficher les prix sur la page de détails d'un produit.
+Seul le prix des produits en euros est saisi en base de données il faudra donc le convertir au moment d'afficher les prix sur la page de détails d'un produit.
 
 #### Contraintes
 Pour réaliser votre conversion, vous utiliserez l'API suivante : [Exchange Rate API](https://www.exchangerate-api.com/)
@@ -29,4 +29,4 @@ Faire ensuite une fonction similaire pour convertir en yen.
 
 #### Afficher les informations
 
-Une fois le service créé, appeler le dans le controller pour obtenir les deux prix convertits et transmettez le tout à la vue twig dans les deux paramètres prévus à cet effet.
+Une fois le service créé, appelez le dans le controller pour obtenir les deux prix convertis et transmettez le tout à la vue twig dans les deux paramètres prévus à cet effet.
