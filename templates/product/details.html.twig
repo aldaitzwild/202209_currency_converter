@@ -15,9 +15,9 @@
                 <ul>
                     <li><label>Description : </label>{{product.description}}</li>
                     <li><label>Marque : </label>{{product.brand}}</li>
-                    <li><label>Prix TTC : </label>{{product.price}}€</li>
-                    <li><label>Prix en dollars : </label>{{dollar_price}}$</li>
-                    <li><label>Prix en yen : </label>{{yen_price}}¥</li>
+                    <li><label>Prix TTC : </label>{{product.price|format_currency('EUR', locale='de')}}</li>
+                    <li><label>Prix en dollars : </label>{{dollar_price|format_currency('USD', locale='de')}}</li>
+                    <li><label>Prix en yen : </label>{{yen_price|format_currency('JPY', locale='de')}}</li>
                 </ul>
             </div>
         </div>
